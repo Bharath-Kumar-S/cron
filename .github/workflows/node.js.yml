@@ -1,0 +1,14 @@
+name: Fetch URL Every 5 Minutes
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # Run the workflow every 5 minutes
+  workflow_dispatch:     
+
+jobs:
+  fetch-url:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Fetch URL
+        run: curl -L -o response.txt https://core-0ozg.onrender.com/
